@@ -23,11 +23,25 @@
 			<option value="2">飲み物</option>
 		<table>
 			<tr>
-			<th>見出しセル</th>
+			<th>商品名</th>
+			<th>価格</th>
+			<th>詳細</th>
 			</tr>
+
+			<%
+			ItemListServlet ils = new ItemListServlet();
+			List list = request.getAttribute(),
+
+
+			for(:list )
+
+				%>
 			<tr>
-			<td>データセル</td>
+			<td></td>
+			<td></td>
+			<td></td>
 			</tr>
+
 		</table>
 
 		</select>
