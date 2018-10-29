@@ -11,6 +11,7 @@
 	<h1>商品紹介</h1>
 	<% int stock = Integer.parseInt(request.getParameter("stockNo"));%>
 
+	<form action = "ProDet" method = "POST">
 	<img src="proImg" align="left">
 
 	<table border = "1">
@@ -27,6 +28,9 @@
 	</select>
 
 	<input type="submit" value = "カートへ" name = "cart"><input type="submit" value = "戻る" name = "back">
+	<input type="hidden" name="proName" value=<jsp:getProperty name ="result" property ="proName"/>>
+	<input type="hidden" name="proPrice" value=<jsp:getProperty name ="result" property ="proPrice"/>>
+	</form>
 
 </body>
 </html>

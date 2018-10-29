@@ -13,6 +13,8 @@ public class ItemBean implements Serializable {
 	private String proImg;
 	private String proMsg;
 
+	private String catName;
+
     public ItemBean(int proCd_, String proName_, int stockNo_, int proPrice_, int catId_, String proImg_, String proMsg_){
 
 		this.proCd = proCd_;
@@ -66,6 +68,14 @@ public class ItemBean implements Serializable {
 	}
 	public void setProMsg(String proMsg) {
 		this.proMsg = proMsg;
+	}
+
+	public String getCatName() {
+		return catName;
+	}
+
+	public void setCatName(String catName) {
+		this.catName = catName;
 	}
 
 }
