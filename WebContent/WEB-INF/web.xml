@@ -10,7 +10,7 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
 
-<!--   <servlet>
+ <!-- <servlet>
   	<servlet-name>ItemListServlet</servlet-name>
   	<servlet-class>web.ItemListServlet</servlet-class>
   </servlet>
@@ -19,5 +19,15 @@
   	<url-pattern>/itemList</url-pattern>
   </servlet-mapping> -->
 
-</web-app>
 
+
+  	<servlet>
+		<servlet-name>SignIn</servlet-name>
+		<servlet-class>web.SignInServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SignIn</servlet-name>
+		<url-pattern>/SignIn</url-pattern>
+	</servlet-mapping>
+</web-app>
