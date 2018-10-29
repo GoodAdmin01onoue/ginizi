@@ -60,12 +60,12 @@ public class ItemListServlet extends HttpServlet {
 
 			stmt = cnct.createStatement();
 
-			if(word_.isEmpty() || cat_.isEmpty() ) {
+			if(!word_.isEmpty() || !cat_.isEmpty() ) {
 
-			} else if(word_.isEmpty()) {
-			query = "SELECT * FROM product WHERE pro_cd =" + /*num(?)*/ + ";";
-		} else if(cat_.isEmpty()) {
-
+			} else if(!word_.isEmpty()) {
+				query = "SELECT * FROM product WHERE pro_name LIKE '%" + word_ + "%';";
+			} else if(!cat_.isEmpty()) {
+				query = "SELECT * FROM product WHERE cat_id =" + cat_ + ";";
 			} else {
 				query = "SELECT * FROM product";
 			}
