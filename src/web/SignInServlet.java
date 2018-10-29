@@ -61,7 +61,7 @@ public class SignInServlet extends HttpServlet {
 				session.setAttribute("loginName",NAME);
 				session.setAttribute("loginPass",PASS);
 
-				req.getRequestDispatcher("itemList.jsp").forward(req, resp);
+				req.getRequestDispatcher("/itemList").forward(req, resp);
 
 			}else {
 					req.setAttribute("message", "名前またはパスワードが一致しません");
