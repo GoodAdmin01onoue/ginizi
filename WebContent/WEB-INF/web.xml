@@ -33,7 +33,7 @@
 		<url-pattern>/SignIn</url-pattern>
 	</servlet-mapping>
 
-	  	<servlet>
+	<servlet>
 		<servlet-name>ProDet</servlet-name>
 		<servlet-class>web.ProDetServlet</servlet-class>
 	</servlet>

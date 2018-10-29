@@ -13,9 +13,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%if(bean!=null){%>
+<%
+System.out.println(bean);
+if(bean!=null){%>
 	<%--送信先のサーブレットを指定。doGetメソッドで --%>
-	<form action="/ginzi/itemList" method="get">
+	<form action="/itemList" method="get">
 		<h3>検索</h3>
 		<%--検索ワードの入力 --%>
 			<input type="text" name="word">
@@ -48,7 +50,11 @@
 			<td>
 
 			<%--ここに次のサーブレットのURL --%>
+<<<<<<< HEAD
 			<form action="Det" method="get">
+=======
+			<form action="/Det" method="get">
+>>>>>>> 12escape
 
 			<%--選択した商品のボタンによって、次のサーブレットにproCdを渡す --%>
 			<button name="product" value="<%=item.getProCd()%>">詳細</button>
