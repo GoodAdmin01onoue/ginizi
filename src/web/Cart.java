@@ -22,24 +22,25 @@ public class Cart extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String proCd =request.getParameter("proCd");
-		
+
 		Connection cn = null;
 		ResultSet rs = null;
 		Statement st =null;
-		PreparedStatement pw = null;
+		PreparedStatement ps = null;
 		String url="jdbc:mysql://localhost/companydb";
 		String user="root";
 		String pw = "password";
-		
-		
+
+
 try {
-		//データーベースをつなげている	
+		//データーベースをつなげている
 		Class.forName("com.mysql.jdbc.Driver");
 		cn=DriverManager.getConnection(url,user,pw);
-		
-		String query = "selext proName,proName" 
-		
-		
+
+		String query = "select proName,proName";
+		rs=st.executeQuery(query);
+
+
 }
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
