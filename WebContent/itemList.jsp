@@ -48,7 +48,7 @@
 			<td>
 
 			<%--ここに次のサーブレットのURL --%>
-			<form action="/" method="get">
+			<form action="/Det" method="get">
 
 			<%--選択した商品のボタンによって、次のサーブレットにproCdを渡す --%>
 			<button name="product" value="<%=item.getProCd()%>">詳細</button>
