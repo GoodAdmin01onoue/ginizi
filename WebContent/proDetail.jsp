@@ -30,6 +30,7 @@
 	<input type="submit" value = "カートへ" name = "cart"><input type="submit" value = "戻る" name = "back">
 	<input type="hidden" name="proName" value=<jsp:getProperty name ="result" property ="proName"/>>
 	<input type="hidden" name="proPrice" value=<jsp:getProperty name ="result" property ="proPrice"/>>
+	<input type="hidden" name="proCd" value=<jsp:getProperty name ="result" property ="proCd"/>>
 	</form>
 
 </body>
