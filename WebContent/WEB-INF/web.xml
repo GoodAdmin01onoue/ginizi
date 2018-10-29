@@ -10,14 +10,14 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
 
-  <servlet>
+<!--   <servlet>
   	<servlet-name>ItemListServlet</servlet-name>
   	<servlet-class>web.ItemListServlet</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>itemList</servlet-name>
   	<url-pattern>/itemList</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping> -->
 
 </web-app>
 
