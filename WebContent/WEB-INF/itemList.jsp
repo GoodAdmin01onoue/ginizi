@@ -2,10 +2,10 @@
     pageEncoding="UTF-8"%>
     <%@page import="java.util.List"%>
 	<%@page import="java.util.ArrayList"%>
-	<%@page import="foo.bar.ItemBean"%>
+	<%@page import="web.ItemBean"%>
 
 
-			<% List<ItemBean> bean =  (List<ItemBean>)req.getAttribute("rs");%>
+			<% List<ItemBean> bean =  (List<ItemBean>)request.getAttribute("rs");%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
