@@ -9,6 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -25,6 +26,11 @@ public class ItemListServlet extends HttpServlet {
 		String word = req.getParameter("word");
 		String cat = req.getParameter("cat");
 
+		List<ItemBean> rs = getItemListDAO(word, cat);
+		req.setAttribute("rs", rs);
+
+		RequestDispatcher rd = req.getRequestDispatcher("/itemList.jsp");
+		rd.forward(req, res);
 
 
 
@@ -50,7 +56,7 @@ public class ItemListServlet extends HttpServlet {
 		ResultSet rs = null;
 		String query = null;
 
-		List<ItemBean> items = new ArrayList();
+		List<ItemBean> items = new ArrayList<ItemBean>();
 
 
 		try {
@@ -71,7 +77,6 @@ public class ItemListServlet extends HttpServlet {
 			}
 
 			rs = stmt.executeQuery(query);
-
 
 			while(rs.next()){
 
