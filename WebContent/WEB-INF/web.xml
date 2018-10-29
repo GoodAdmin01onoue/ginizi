@@ -42,6 +42,16 @@
 		<servlet-name>ProDet</servlet-name>
 		<url-pattern>/ProDet</url-pattern>
 	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Det</servlet-name>
+		<servlet-class>web.DetServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Det</servlet-name>
+		<url-pattern>/Det</url-pattern>
+	</servlet-mapping>
 </web-app>
 
 
