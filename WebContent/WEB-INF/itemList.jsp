@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    ItemListServlet lils = new ItemListServlet();
+			<% List<ItemList> list = (AllatyList(ItemList))request.getAttribute()<%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,7 +10,7 @@
 </head>
 <body>
 	<%--送信先のサーブレットを指定。doGetメソッドで --%>
-	<form action="http://\\\\\\\:8080ginzi/itemList" method="get">
+	<form action=/ginzi/itemList" method="get">
 		<h3>検索</h3>
 		<%--検索ワードの入力 --%>
 			<input type="text" name="word">
@@ -16,11 +18,11 @@
 		<br>
 		<%--カテゴリーの選択 --%>
 			カテゴリ
-			<select name="cut">
-			<option value="1">食べ物</option>
-			<option value="1">食べ物</option>
-			<option value="2">飲み物</option>
-			<option value="2">飲み物</option>
+		<select name= "cut" >
+			<option value= "1" >食べ物</option>
+			<option value= "2">飲み物</option>
+		</select>
+
 		<table>
 			<tr>
 			<th>商品名</th>
@@ -28,18 +30,14 @@
 			<th>詳細</th>
 			</tr>
 
-			<%
-			ItemListServlet ils = new ItemListServlet();
-			List list = request.getAttribute(),
+			<%for(ItemList bean:list){%>
 
 
-			for(:list )
-
-				%>
 			<tr>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td><%=bean.getproName() %></td>
+			<td><%=bean.getproPrice %></td>
+			<td><input type="button" value="詳細"></td>
+
 			</tr>
 
 		</table>
