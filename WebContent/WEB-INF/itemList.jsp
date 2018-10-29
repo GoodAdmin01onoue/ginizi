@@ -38,15 +38,14 @@
 
 
 			<tr>
-			<td><%=item.getproName() %></td>
-			<td><%=item.getproPrice %></td>
-			<td><input type="button" value="詳細" onClick="location.href='http://localhost:8080/ginzi/<%=item.getItemId%>'"></td>
+			<td><%=item.getProName() %></td>
+			<td><%=item.getProPrice() %></td>
+			<td><input type="button" value="詳細" onClick="location.href='http://localhost:8080/ginzi/<%=item.getProCd() %>'"></td>
 			</tr>
 			<%} %>
 
 		</table>
 
-		</select>
 		<br>
 		<input type="submit">
 	</form>
