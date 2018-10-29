@@ -1,7 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-   <% ItemListServlet list = new ItemListServlet()%>
-			<% List<ItemBean> list =  (List<ItemBean>)req.getAttribute("rs") %>
+    <%@page import="java.util.List"%>
+	<%@page import="java.util.ArrayList"%>
+	<%@page import="foo.bar.ItemBean"%>
+
+
+			<% List<ItemBean> bean =  (List<ItemBean>)req.getAttribute("rs");%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -30,15 +34,15 @@
 			<th>詳細</th>
 			</tr>
 
-			<%for(ItemList bean:list){%>
+			<%for(ItemBean item:bean){%>
 
 
 			<tr>
-			<td><%=bean.getproName() %></td>
-			<td><%=bean.getproPrice %></td>
-			<td><input type="button" value="詳細"></td>
-
+			<td><%=item.getproName() %></td>
+			<td><%=item.getproPrice %></td>
+			<td><input type="button" value="詳細" onClick="location.href='http://localhost:8080/ginzi/<%=item.getItemId%>'"></td>
 			</tr>
+			<%} %>
 
 		</table>
 
