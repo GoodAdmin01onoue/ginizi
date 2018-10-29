@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.servlet.ServletException;
@@ -37,10 +38,15 @@ try {
 		Class.forName("com.mysql.jdbc.Driver");
 		cn=DriverManager.getConnection(url,user,pw);
 
-		String query = "select proName,proName";
+		String query = "select proName,proName from user";
 		rs=st.executeQuery(query);
 
 
+}catch(SQLException ex)
+{
+	ex.printStackTrace();
+}catch(ClassNotFoundException ex) {
+	ex.printStackTrace();
 }
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

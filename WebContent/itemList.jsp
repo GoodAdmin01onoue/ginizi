@@ -13,7 +13,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%if(bean!=null){%>
+<%
+
+if(bean!=null){%>
 	<%--送信先のサーブレットを指定。doGetメソッドで --%>
 	<form action="/ginzi/itemList" method="get">
 		<h3>検索</h3>
