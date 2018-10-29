@@ -20,7 +20,7 @@ public class SignInServlet extends HttpServlet {
 
 		String NAME=null,PASS=null;
 
-		String name = req.getParameter("name");;
+		String name = req.getParameter("name");
 		String pass = req.getParameter("pass");
 
 		//DBMSへの接続

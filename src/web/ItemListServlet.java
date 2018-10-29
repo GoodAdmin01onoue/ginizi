@@ -18,9 +18,10 @@ import javax.servlet.http.HttpServletResponse;
 public class ItemListServlet extends HttpServlet {
 
 
+	String word = null;
+	String cat = null;
 
-
-	@Override
+/*	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
 		res.setContentType("text/html;charset=UTF-8");
@@ -35,7 +36,7 @@ public class ItemListServlet extends HttpServlet {
 		RequestDispatcher rd = req.getRequestDispatcher("/itemList.jsp");
 		rd.forward(req, res);
 
-	}
+	}*/
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
@@ -43,10 +44,12 @@ public class ItemListServlet extends HttpServlet {
 		res.setContentType("text/html;charset=UTF-8");
 		req.setCharacterEncoding("UTF-8");
 
-		String word = req.getParameter("word");
-		String cat = req.getParameter("cat");
 
-		List<ItemBean> rs = getItemListDAO(word, cat);
+
+//		word = req.getParameter("word");
+//		cat = req.getParameter("cat");
+
+		List<ItemBean> rs = getItemListDAO("米", cat);
 		req.setAttribute("rs", rs);
 
 		RequestDispatcher rd = req.getRequestDispatcher("/itemList.jsp");
@@ -54,24 +57,23 @@ public class ItemListServlet extends HttpServlet {
 
 	}
 
-	public static ItemBean moldingItem() {
+/*	public static ItemBean moldingItem() {
 
 		ItemBean item = null;
 
 		return item;
 
-	}
+	}*/
 
 	public static List<ItemBean> getItemListDAO(String word_, String cat_) {
 
-		String url = "jdbc:mysql://localhost/lesson2018";
+		String url = "jdbc:mysql://localhost/ginizishop";
 		String id = "root";
 		String pw = "password";
 
 		Connection cnct = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		String query = null;
 
 		List<ItemBean> items = new ArrayList<ItemBean>();
 
@@ -83,15 +85,21 @@ public class ItemListServlet extends HttpServlet {
 
 			stmt = cnct.createStatement();
 
-			if(!word_.isEmpty() || !cat_.isEmpty() ) {
+			String query = null;
+//			if( !StringUtils.isNullOrEmpty(word_) || !StringUtils.isNullOrEmpty(cat_) ) {
+//
+//			} else if(!word_.isEmpty()) {
+//				System.out.println("word");
+//				query = "SELECT * FROM product WHERE pro_name LIKE '%" + word_ + "%';";
+//			} else if(!cat_.isEmpty()) {
+//				System.out.println("cat");
+//				query = "SELECT * FROM product WHERE cat_id =" + cat_ + ";";
+//			} else {
+//				System.out.println("non");
+//				query = "SELECT * FROM product";
+//			}
 
-			} else if(!word_.isEmpty()) {
-				query = "SELECT * FROM product WHERE pro_name LIKE '%" + word_ + "%';";
-			} else if(!cat_.isEmpty()) {
-				query = "SELECT * FROM product WHERE cat_id =" + cat_ + ";";
-			} else {
-				query = "SELECT * FROM product";
-			}
+			query = "SELECT * FROM product";
 
 			rs = stmt.executeQuery(query);
 
