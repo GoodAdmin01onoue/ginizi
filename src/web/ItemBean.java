@@ -12,6 +12,19 @@ public class ItemBean implements Serializable {
 	private int catId;
 	private String proImg;
 	private String proMsg;
+
+    public ItemBean(int proCd_, String proName_, int stockNo_, int proPrice_, int catId_, String proImg_, String proMsg_){
+
+		this.proCd = proCd_;
+		this.proName = proName_;
+		this.stockNo = stockNo_;
+		this.proPrice = proPrice_;
+		this.catId = catId_;
+		this.proImg = proImg_;
+		this.proMsg = proMsg_;
+
+    }
+
 	public int getProCd() {
 		return proCd;
 	}
@@ -54,7 +67,5 @@ public class ItemBean implements Serializable {
 	public void setProMsg(String proMsg) {
 		this.proMsg = proMsg;
 	}
-
-
 
 }

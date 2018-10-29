@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    ItemListServlet lils = new ItemListServlet();
-			<% List<ItemList> list = (AllatyList(ItemList))request.getAttribute()<%>
+   <% ItemListServlet list = new ItemListServlet()%>
+			<% List<ItemBean> list =  (List<ItemBean>)req.getAttribute("rs") %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,7 +10,7 @@
 </head>
 <body>
 	<%--送信先のサーブレットを指定。doGetメソッドで --%>
-	<form action=/ginzi/itemList" method="get">
+	<form action="/ginzi/itemList" method="get">
 		<h3>検索</h3>
 		<%--検索ワードの入力 --%>
 			<input type="text" name="word">
