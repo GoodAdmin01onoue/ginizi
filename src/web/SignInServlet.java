@@ -7,7 +7,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -57,13 +56,12 @@ public class SignInServlet extends HttpServlet {
 				req.setAttribute("message", "名前またはパスワードを入力してください");
 				req.getRequestDispatcher("signIn.jsp").forward(req, resp);
 				return;
-			}else if(NAME.equals(name) || PASS.equals(pass)) {
+			}else if(name.equals(NAME) || pass.equals(PASS)) {
 				HttpSession session = req.getSession(true);
 				session.setAttribute("loginName",NAME);
 				session.setAttribute("loginPass",PASS);
 
-				RequestDispatcher rd = req.getRequestDispatcher("itemList.jsp");
-				rd.forward(req, resp);
+				req.getRequestDispatcher("itemList.jsp").forward(req, resp);
 
 			}else {
 					req.setAttribute("message", "名前またはパスワードが一致しません");
