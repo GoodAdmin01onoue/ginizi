@@ -99,7 +99,7 @@ public class ItemListServlet extends HttpServlet {
 //				query = "SELECT * FROM product";
 //			}
 
-			query = "SELECT * FROM product";
+//			query = "SELECT * FROM product";
 
 			rs = stmt.executeQuery(query);
 

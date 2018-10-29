@@ -2,6 +2,7 @@ package web;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -20,12 +21,24 @@ public class Cart extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		String proCd =request.getParameter("proCd");
+		
 		Connection cn = null;
 		ResultSet rs = null;
 		Statement st =null;
-		PreparedStatement ps = null;
+		PreparedStatement pw = null;
+		String url="jdbc:mysql://localhost/companydb";
+		String user="root";
+		String pw = "password";
+		
+		
 try {
+		//データーベースをつなげている	
 		Class.forName("com.mysql.jdbc.Driver");
+		cn=DriverManager.getConnection(url,user,pw);
+		
+		String query = "selext proName,proName" 
+		
 		
 }
 	}
