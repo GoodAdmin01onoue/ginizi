@@ -17,6 +17,26 @@ import javax.servlet.http.HttpServletResponse;
 
 public class ItemListServlet extends HttpServlet {
 
+
+
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+
+		res.setContentType("text/html;charset=UTF-8");
+		req.setCharacterEncoding("UTF-8");
+
+		String word = req.getParameter("word");
+		String cat = req.getParameter("cat");
+
+		List<ItemBean> rs = getItemListDAO(word, cat);
+		req.setAttribute("rs", rs);
+
+		RequestDispatcher rd = req.getRequestDispatcher("/itemList.jsp");
+		rd.forward(req, res);
+
+	}
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
@@ -31,9 +51,6 @@ public class ItemListServlet extends HttpServlet {
 
 		RequestDispatcher rd = req.getRequestDispatcher("/itemList.jsp");
 		rd.forward(req, res);
-
-
-
 
 	}
 
