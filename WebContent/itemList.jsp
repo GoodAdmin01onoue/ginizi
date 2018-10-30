@@ -17,7 +17,7 @@
 System.out.println(bean);
 if(bean!=null){%>
 	<%--送信先のサーブレットを指定。doGetメソッドで --%>
-	<form action="/itemList" method="get">
+	<form action="/itemList" method="post">
 		<h3>検索</h3>
 		<%--検索ワードの入力 --%>
 			<input type="text" name="word">
@@ -48,23 +48,29 @@ if(bean!=null){%>
 			<td><%=item.getProName() %></td>
 			<td><%=item.getProPrice() %></td>
 			<td>
+			</form>
 
 			<%--ここに次のサーブレットのURL --%>
-			<form action="/Det" method="get">
 
-				<%--選択した商品のボタンによって、次のサーブレットにproCdを渡す --%>
+<%-- <<<<<<< HEAD
+				選択した商品のボタンによって、次のサーブレットにproCdを渡す
 				<button name="product" value="<%=item.getProCd()%>">詳細</button>
+=======
+>>>>>>> 12escape --%>
 
-			</form>
+			<%--選択した商品のボタンによって、次のサーブレットにproCdを渡す --%>
+			<a href="/Det?product=<%=item.getProCd()%>"><button name="product">詳細</button>
 			</tr>
+			</table>
+
+
 			<%}%>
 			<% }else{ %>
 			<h2>検索できません</h2>
 			<%}%>
 
-		</table>
+			s
 
-	</form>
 	<br>
 
 </body>

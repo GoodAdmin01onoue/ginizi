@@ -38,9 +38,12 @@ try {
 		Class.forName("com.mysql.jdbc.Driver");
 		cn=DriverManager.getConnection(url,user,pw);
 
-		String query = "select proName,proName from user";
+		String query = "select proName,proName from user where"+proCd;
 		rs=st.executeQuery(query);
 
+		while(rs.next()) {
+
+		}
 
 }catch(SQLException ex)
 {
