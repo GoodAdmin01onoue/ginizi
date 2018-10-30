@@ -7,7 +7,7 @@
 <title>商品紹介</title>
 </head>
 <body>
-<jsp:useBean id = "result" scope ="request" class = "web.ItemBean" type = "web.ItemBean"/>
+<jsp:useBean id = "result" scope="request" type = "web.ItemBean"/>
 	<h1>商品紹介</h1>
 	<% int stock = Integer.parseInt(request.getParameter("stockNo"));%>
 
