@@ -16,24 +16,24 @@ public class ResultServlet extends HttpServlet {
 
 	resp.setContentType("text/html;charset=UTF-8");
 
-	  String msg = (String)req.getParameter("msg");
-	  String msg1 = (String)req.getParameter("msg1");
+	  String msg = (String)req.getParameter("a");
+	  String msg1 = (String)req.getParameter("b");
 
 
-
+    //セッション継続
 	if(msg !=null) {
 		 HttpSession session = req.getSession(false);
 
 		    if(session== null)
 		    	return;
 
-
+    //セッション終了
 	}else if(msg1 !=null){
 		HttpSession session = req.getSession(false);
 		if (session != null) {
 		session.invalidate();
 
-
+   //Result.jspを呼び出す
 	RequestDispatcher dispatcher = req.getRequestDispatcher("/jsp/Result.jsp");
     dispatcher.forward(req, resp);
 
