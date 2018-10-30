@@ -61,7 +61,7 @@
                 <td>¥<%= rs.getInt("pro_price")%></td>
                 <% plist.add(rs.getInt("pro_price")); %>
 
-                <td><%= rs.getInt("order_no") %></td>
+                <td><%= rs.getInt("order_no") %>個</td>
                 <% nlist.add(rs.getInt("order_no")); %>
                 </tr>
 

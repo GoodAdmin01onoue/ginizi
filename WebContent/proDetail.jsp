@@ -1,5 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+	<% request.setCharacterEncoding("UTF8");
+		String proName = (String)request.getAttribute("proName");
+	  String catName = (String)request.getAttribute("catName");
+	 int proPrice =(Integer)request.getAttribute("proPrice");
+	int stockNo = (Integer)request.getAttribute("stockNo");
+	 String proMsg = (String)request.getAttribute("proMsg");
+	 String proImg = (String)request.getAttribute("proImg");
+	 int proCd = (Integer)request.getAttribute("proCd"); %>
+
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,34 +18,20 @@
 <title>商品紹介</title>
 </head>
 <body>
-	<h1>商品紹介</h1>
-	<% String proName = request.getParameter("proName");%>
-	<% String catName = request.getParameter("catName");%>
-	<% String proPrice1 =request.getParameter("proPrice");%>
-	<% String stockNo1 = request.getParameter("stockNo");%>
-	<% String proMsg = request.getParameter("proMsg");%>
-	<% String proImg = request.getParameter("proImg");%>
-	<% String proCd1 = request.getParameter("proCd");%>
 
-	<% proPrice1 = proPrice1.trim();
-		stockNo1 = stockNo1.trim();
-		proCd1 = proCd1.trim();
+<center><h1>商品紹介</h1></center>
 
-		int proPrice = Integer.parseInt(proPrice1);
-		int stockNo = Integer.parseInt(stockNo1);
-		int proCd = Integer.parseInt(proCd1);
-	%>
 
 
 	<form action = "ProDet" method = "POST">
-	<img src="<%= proImg%>" align="left">
+	<img src="C:\Users\education\Desktop\写真\<%= proImg%>" align="left">
 
-	<table border = "1">
+	<table border = "1" width="300">
 	<tr><td>商品名</td><td><%= proName%></td></tr>
 	<tr><td>カテゴリ</td><td><%= catName%></td></tr>
-	<tr><td>価格</td><td><%= proPrice%></td></tr>
-	<tr><td>在庫</td><td><%= stockNo%></td></tr>
-	<tr><td>商品紹介</td><td><%= proImg%></td></tr>
+	<tr><td>価格</td><td>¥<%= proPrice%></td></tr>
+	<tr><td>在庫</td><td><%= stockNo%>個</td></tr>
+	<tr><td>商品紹介</td><td><%= proMsg%></td></tr>
 	</table>
 
 	個数<select name = "num">

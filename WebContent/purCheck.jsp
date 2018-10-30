@@ -1,16 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-        <%@page import="java.sql.*"%>
+    <%@page import="java.sql.*"%>
         <%@page import="java.util.List"%>
 	<%@page import="java.util.ArrayList"%>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>購入確認</title>
+<title>購入確認画面</title>
 </head>
 <body>
-	<center><h1>購入してよろしいでしょうか？</h1></center>
+	<center><h1>購入してよろしいでしょうか</h1></center>
 	<center><table border='1' width="500"><tr><th>商品名</th><th>単価</th><th>数量</th></tr>
 
 <%
@@ -23,8 +25,7 @@
 
         List<Integer> plist = new ArrayList<Integer>();
         List<Integer> nlist = new ArrayList<Integer>();
-		List<Integer> cdlist = new ArrayList<Integer>();
-        int total=0,num;
+        int total=0;
         double tax =0;
 
 
@@ -41,9 +42,7 @@
 
             rs1 = stmt.executeQuery("select * from purchase;");
 			while(rs1.next()){
-				num = rs1.getInt("pro_cd");
-				cdlist.add(rs.getInt("pro_cd"));
-
+				int num = rs1.getInt("pro_cd");
 
 
             // SQL()を実行して、結果を得る
@@ -72,10 +71,7 @@
 			for(int i = 0;i < plist.size(); i++){
 				total += plist.get(i) * nlist.get(i);
 			}
-			tax = total * 0.8;
-
-			request.setAttribute("numList", nlist);
-			request.setAttribute("cdList", cdlist);
+			tax = total * 0.08;
 
 			%>
 			<tr>
@@ -97,7 +93,7 @@
 
         </table></center>
         <form action = "Check" method = "POST">
-        <center><input type="submit" value = "いいえ" name = "No"><input type="submit" value = "はい" name = "Yes"></center>
+        <center><input type="submit" value = "いいえ" name = "no"><input type="submit" value = "はい" name = "yes"></center>
         </form>
 
 </body>

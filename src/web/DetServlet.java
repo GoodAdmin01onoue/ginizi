@@ -7,7 +7,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -68,8 +67,6 @@ public class DetServlet extends HttpServlet {
 				catName = rs.getString("cat_name");
 			}
 
-
-
 			req.setAttribute("catName",catName);
 			req.setAttribute("proName",proName);
 			req.setAttribute("proPrice",proPrice);
@@ -79,8 +76,7 @@ public class DetServlet extends HttpServlet {
 			req.setAttribute("proCd",proCd);
 
 
-			RequestDispatcher rd = req.getRequestDispatcher("proDetail.jsp");
-			rd.forward(req, resp);
+			req.getRequestDispatcher("proDetail.jsp").forward(req, resp);
 
 		}catch(ClassNotFoundException ex) {
 			ex.printStackTrace();

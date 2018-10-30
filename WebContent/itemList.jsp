@@ -58,6 +58,8 @@ if(bean!=null){%>
 			<%--選択した商品のボタンによって、次のサーブレットにproCdを渡す --%>
 			<a href="./Det?product=<%=item.getProCd()%>">詳細</a>
 
+			</form>
+
 
 
 			<%}%>
