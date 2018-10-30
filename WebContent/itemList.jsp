@@ -14,7 +14,6 @@
 </head>
 <body>
 <%
-System.out.println(bean);
 if(bean!=null){%>
 	<%--送信先のサーブレットを指定。doGetメソッドで --%>
 	<form action="./itemList" method="get">
