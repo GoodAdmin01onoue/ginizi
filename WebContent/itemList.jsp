@@ -53,7 +53,7 @@ if(bean!=null){%>
 
 			<%--ここに次のサーブレットのURL --%>
 
-			<form action="./Det" method="get">
+			<form action="Det" method="get">
 
 
 			<%--選択した商品のボタンによって、次のサーブレットにproCdを渡す --%>

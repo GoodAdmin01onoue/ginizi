@@ -63,6 +63,27 @@
 		<servlet-name>Det</servlet-name>
 		<url-pattern>/Det</url-pattern>
 	</servlet-mapping>
+
+		<servlet>
+		<servlet-name>cart</servlet-name>
+		<servlet-class>web.CartServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>cart</servlet-name>
+		<url-pattern>/cart</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>Check</servlet-name>
+		<servlet-class>web.CheckServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Check</servlet-name>
+		<url-pattern>/Check</url-pattern>
+	</servlet-mapping>
 </web-app>
 
 

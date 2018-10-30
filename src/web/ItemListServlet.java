@@ -103,13 +103,14 @@ public class ItemListServlet extends HttpServlet {
 				String pro_msg = rs.getString("pro_msg");
 
 				ItemBean Item = new ItemBean(
-											pro_cd,
-											pro_name,
-											stock_no,
-											pro_price,
-											cat_id,
-											pro_img,
-											pro_msg
+						pro_cd,
+						pro_name,
+						stock_no,
+						pro_price,
+						cat_id,
+						pro_img,
+						pro_msg
+
 											);
 				items.add(Item);
 			}
