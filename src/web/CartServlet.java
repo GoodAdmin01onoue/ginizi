@@ -16,7 +16,7 @@ public class CartServlet extends HttpServlet {
 		String buy = req.getParameter("buy");
 
 		if(cont != null) {
-			req.getRequestDispatcher("itemList.jsp").forward(req, resp);
+			resp.sendRedirect("./itemList");
 		}else if(buy != null) {
 			req.getRequestDispatcher("purCheck.jsp").forward(req, resp);
 		}

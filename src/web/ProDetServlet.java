@@ -65,7 +65,7 @@ public class ProDetServlet extends HttpServlet {
 
 			//back押された場合
 			}else if(back != null) {
-				req.getRequestDispatcher("itemList.jsp").forward(req, resp);
+				resp.sendRedirect("./itemList");
 			}
 
 		//ClassNotFoundExceptionが起きた時実行

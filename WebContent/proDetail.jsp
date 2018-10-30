@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<	<% request.setCharacterEncoding("UTF8");
+	<% request.setCharacterEncoding("UTF8");
 		String proName = (String)request.getAttribute("proName");
 	  String catName = (String)request.getAttribute("catName");
 	 int proPrice =(Integer)request.getAttribute("proPrice");
@@ -26,11 +26,11 @@
 	<form action = "ProDet" method = "POST">
 	<img src="C:\Users\education\Desktop\写真\<%= proImg%>" align="left">
 
-	<table border = "1" width="500">
+	<table border = "1" width="300">
 	<tr><td>商品名</td><td><%= proName%></td></tr>
 	<tr><td>カテゴリ</td><td><%= catName%></td></tr>
-	<tr><td>価格</td><td><%= proPrice%></td></tr>
-	<tr><td>在庫</td><td><%= stockNo%></td></tr>
+	<tr><td>価格</td><td>¥<%= proPrice%></td></tr>
+	<tr><td>在庫</td><td><%= stockNo%>個</td></tr>
 	<tr><td>商品紹介</td><td><%= proMsg%></td></tr>
 	</table>
 
