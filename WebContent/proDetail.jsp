@@ -2,12 +2,12 @@
     pageEncoding="UTF-8"%>
 	<% request.setCharacterEncoding("UTF8");
 		String proName = (String)request.getAttribute("proName");
-	  String catName = (String)request.getAttribute("catName");
-	 int proPrice =(Integer)request.getAttribute("proPrice");
-	int stockNo = (Integer)request.getAttribute("stockNo");
-	 String proMsg = (String)request.getAttribute("proMsg");
-	 String proImg = (String)request.getAttribute("proImg");
-	 int proCd = (Integer)request.getAttribute("proCd"); %>
+		String catName = (String)request.getAttribute("catName");
+		int proPrice =(Integer)request.getAttribute("proPrice");
+		int stockNo = (Integer)request.getAttribute("stockNo");
+		String proMsg = (String)request.getAttribute("proMsg");
+		String proImg = (String)request.getAttribute("proImg");
+		int proCd = (Integer)request.getAttribute("proCd"); %>
 
 
 
