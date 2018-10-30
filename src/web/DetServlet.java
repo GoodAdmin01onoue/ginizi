@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,9 +17,8 @@ public class DetServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		/*int proCd = Integer.parseInt(req.getParameter("product"));*/
+		int proCd = Integer.parseInt(req.getParameter("product"));
 
-		int proCd=1;
 
 		String proName="";
 	 	int stockNo=0;
@@ -68,8 +68,10 @@ public class DetServlet extends HttpServlet {
 				catName = rs.getString("cat_name");
 			}
 
-			System.out.println(catName);
-			System.out.println(proMsg);
+			ItemBean bean = new ItemBean(proCd, proName, stockNo, proPrice, catId, proImg, proMsg);
+
+			RequestDispatcher rd = req.getRequestDispatcher("proDetail.jsp");
+			rd.forward(req, resp);
 
 		}catch(ClassNotFoundException ex) {
 			ex.printStackTrace();

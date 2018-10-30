@@ -53,11 +53,8 @@ if(bean!=null){%>
 
 			<%--ここに次のサーブレットのURL --%>
 
-<%-- <<<<<<< HEAD
-				選択した商品のボタンによって、次のサーブレットにproCdを渡す
-				<button name="product" value="<%=item.getProCd()%>">詳細</button>
-=======
->>>>>>> 12escape --%>
+			<form action="./Det" method="get">
+
 
 			<%--選択した商品のボタンによって、次のサーブレットにproCdを渡す --%>
 			<a href="./Det?product=<%=item.getProCd()%>">詳細</a>
