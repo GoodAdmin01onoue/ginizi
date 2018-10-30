@@ -68,7 +68,16 @@ public class DetServlet extends HttpServlet {
 				catName = rs.getString("cat_name");
 			}
 
-			ItemBean bean = new ItemBean(proCd, proName, stockNo, proPrice, catId, proImg, proMsg);
+
+
+			req.setAttribute("catName",catName);
+			req.setAttribute("proName",proName);
+			req.setAttribute("proPrice",proPrice);
+			req.setAttribute("stockNo",stockNo);
+			req.setAttribute("proImg",proImg);
+			req.setAttribute("proMsg",proMsg);
+			req.setAttribute("proCd",proCd);
+
 
 			RequestDispatcher rd = req.getRequestDispatcher("proDetail.jsp");
 			rd.forward(req, resp);
