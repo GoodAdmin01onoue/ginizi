@@ -22,7 +22,6 @@
 	<tr><td>商品紹介</td><td><jsp:getProperty name ="result" property ="proMsg"/></td></tr>
 	</table>
 
-
 	個数<select name = "num">
 	<% for(int i = 1;i <= stock; i++){ %><option value=<%= i %>><%= i%></option><% } %>
 	</select>
