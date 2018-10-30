@@ -13,11 +13,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-System.out.println(bean);
-if(bean!=null){%>
+
+	<%if(bean != null){%>
 	<%--送信先のサーブレットを指定。doGetメソッドで --%>
-	<form action="/itemList" method="post">
+	<form action="./itemList" method="get">
 		<h3>検索</h3>
 		<%--検索ワードの入力 --%>
 			<input type="text" name="word">
@@ -48,24 +47,25 @@ if(bean!=null){%>
 			<td><%=item.getProName() %></td>
 			<td><%=item.getProPrice() %></td>
 			<td>
-			</form>
+
 
 			<%--ここに次のサーブレットのURL --%>
 
 
 			<%--選択した商品のボタンによって、次のサーブレットにproCdを渡す --%>
-			<a href="/Det?product=<%=item.getProCd()%>"><button name="product">詳細</button>
-			</tr>
-			</table>
+			<a href="./Det?product=<%=item.getProCd()%>">詳細</a>
+
 
 
 			<%}%>
+
 			<% }else{ %>
 			<h2>検索できません</h2>
 			<%}%>
 
-			s
 
+			</table>
+</form>
 	<br>
 
 </body>

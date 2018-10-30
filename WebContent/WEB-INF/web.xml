@@ -9,49 +9,36 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-
-
-<servlet>
-  	<servlet-name>itemList</servlet-name>
-  	<servlet-class>web.ItemListServlet</servlet-class>
+  <servlet>
+    <servlet-name>itemList</servlet-name>
+    <servlet-class>web.ItemListServlet</servlet-class>
   </servlet>
-
   <servlet-mapping>
-  	<servlet-name>itemList</servlet-name>
-  	<url-pattern>/itemList</url-pattern>
+    <servlet-name>itemList</servlet-name>
+    <url-pattern>/itemList</url-pattern>
   </servlet-mapping>
-
-
-
-  	<servlet>
-		<servlet-name>SignIn</servlet-name>
-		<servlet-class>web.SignInServlet</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>SignIn</servlet-name>
-		<url-pattern>/SignIn</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>ProDet</servlet-name>
-		<servlet-class>web.ProDetServlet</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>ProDet</servlet-name>
-		<url-pattern>/ProDet</url-pattern>
-	</servlet-mapping>
-	<servlet>
-		<servlet-name>Det</servlet-name>
-		<servlet-class>web.DetServlet</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>Det</servlet-name>
-		<url-pattern>/Det</url-pattern>
-	</servlet-mapping>
+  <servlet>
+    <servlet-name>SignIn</servlet-name>
+    <servlet-class>web.SignInServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SignIn</servlet-name>
+    <url-pattern>/SignIn</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ProDet</servlet-name>
+    <servlet-class>web.ProDetServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProDet</servlet-name>
+    <url-pattern>/ProDet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Det</servlet-name>
+    <servlet-class>web.DetServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Det</servlet-name>
+    <url-pattern>/Det</url-pattern>
+  </servlet-mapping>
 </web-app>
-
-
-
