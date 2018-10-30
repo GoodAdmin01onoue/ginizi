@@ -1,5 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<% request.setCharacterEncoding("UTF8");
+	String proName = (String)request.getAttribute("proName");
+	String catName = (String)request.getAttribute("catName");
+	int proPrice =(Integer)request.getAttribute("proPrice");
+	int stockNo = (Integer)request.getAttribute("stockNo");
+	String proMsg = (String)request.getAttribute("proMsg");
+	String proImg = (String)request.getAttribute("proImg");
+	int proCd = (Integer)request.getAttribute("proCd"); %>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
