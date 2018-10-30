@@ -51,6 +51,18 @@
 		<servlet-name>Check</servlet-name>
 		<url-pattern>/Check</url-pattern>
 	</servlet-mapping>
+
+
+	<servlet>
+   <servlet-name>CheckPurchase</servlet-name>
+    <servlet-class>web.CheckPurchase</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>CheckPurchase</servlet-name>
+    <url-pattern>/CheckPurchase</url-pattern>
+  </servlet-mapping>
+
 </web-app>
 
 
