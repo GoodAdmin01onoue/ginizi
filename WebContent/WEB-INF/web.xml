@@ -17,6 +17,7 @@
     <servlet-name>itemList</servlet-name>
     <url-pattern>/itemList</url-pattern>
   </servlet-mapping>
+
   <servlet>
     <servlet-name>SignIn</servlet-name>
     <servlet-class>web.SignInServlet</servlet-class>
@@ -41,4 +42,16 @@
     <servlet-name>Det</servlet-name>
     <url-pattern>/Det</url-pattern>
   </servlet-mapping>
+	<servlet>
+		<servlet-name>Check</servlet-name>
+		<servlet-class>web.CheckServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Check</servlet-name>
+		<url-pattern>/Check</url-pattern>
+	</servlet-mapping>
 </web-app>
+
+
+

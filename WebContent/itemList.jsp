@@ -26,6 +26,7 @@
 		<%--カテゴリーの選択 --%>
 			カテゴリ
 		<select name= "cat" >
+			<option value= "" disabled selected>未選択</option>
 			<option value= "1" >食べ物</option>
 			<option value= "2">飲み物</option>
 		</select>
@@ -51,6 +52,8 @@
 
 			<%--ここに次のサーブレットのURL --%>
 
+			<form action="Det" method="get">
+
 
 			<%--選択した商品のボタンによって、次のサーブレットにproCdを渡す --%>
 			<a href="./Det?product=<%=item.getProCd()%>">詳細</a>
@@ -63,8 +66,11 @@
 			<h2>検索できません</h2>
 			<%}%>
 
-
+			</tr>
 			</table>
+
+
+
 </form>
 	<br>
 

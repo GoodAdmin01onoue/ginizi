@@ -27,8 +27,6 @@ public class ItemListServlet extends HttpServlet {
 		res.setContentType("text/html;charset=UTF-8");
 		req.setCharacterEncoding("UTF-8");
 
-
-
 		word = req.getParameter("word");
 		cat = req.getParameter("cat");
 
@@ -46,10 +44,7 @@ public class ItemListServlet extends HttpServlet {
 		res.setContentType("text/html;charset=UTF-8");
 		req.setCharacterEncoding("UTF-8");
 
-
-
 		word = req.getParameter("word");
-		System.out.println(word);
 		cat = req.getParameter("cat");
 
 		List<ItemBean> rs = getItemListDAO(word, cat);
@@ -108,13 +103,14 @@ public class ItemListServlet extends HttpServlet {
 				String pro_msg = rs.getString("pro_msg");
 
 				ItemBean Item = new ItemBean(
-											pro_cd,
-											pro_name,
-											stock_no,
-											pro_price,
-											cat_id,
-											pro_img,
-											pro_msg
+						pro_cd,
+						pro_name,
+						stock_no,
+						pro_price,
+						cat_id,
+						pro_img,
+						pro_msg
+
 											);
 				items.add(Item);
 			}

@@ -7,7 +7,7 @@
 <title>商品紹介</title>
 </head>
 <body>
-<jsp:useBean id = "result" scope ="request" class = "web.ItemBean" type = "web.ItemBean"/>
+<jsp:useBean id = "result" scope="request" type = "web.ItemBean"/>
 	<h1>商品紹介</h1>
 	<% int stock = Integer.parseInt(request.getParameter("stockNo"));%>
 
@@ -22,7 +22,6 @@
 	<tr><td>商品紹介</td><td><jsp:getProperty name ="result" property ="proMsg"/></td></tr>
 	</table>
 
-
 	個数<select name = "num">
 	<% for(int i = 1;i <= stock; i++){ %><option value=<%= i %>><%= i%></option><% } %>
 	</select>
@@ -30,6 +29,7 @@
 	<input type="submit" value = "カートへ" name = "cart"><input type="submit" value = "戻る" name = "back">
 	<input type="hidden" name="proName" value=<jsp:getProperty name ="result" property ="proName"/>>
 	<input type="hidden" name="proPrice" value=<jsp:getProperty name ="result" property ="proPrice"/>>
+	<input type="hidden" name="proCd" value=<jsp:getProperty name ="result" property ="proCd"/>>
 	</form>
 
 </body>
