@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -34,6 +36,8 @@ public class ProDetServlet extends HttpServlet {
 		//定義
 		Connection cnct = null;
 		PreparedStatement st = null;
+		Statement stmt = null;
+		ResultSet rs = null;
 
 
 		try {
@@ -50,8 +54,6 @@ public class ProDetServlet extends HttpServlet {
 			st.setInt(1,proCd);
 			st.setInt(2,num);
 			st.executeUpdate();
-			cnct.commit();
-
 
 
 				HttpSession session =req.getSession(true);
