@@ -58,7 +58,7 @@ public class ItemListServlet extends HttpServlet {
 
 	public static List<ItemBean> getItemListDAO(String word_, String cat_) {
 
-		String url = "jdbc:mysql://localhost/ginizishop";
+		String url = "jdbc:mysql://localhost/ginizishop?autoReconnect=true&useSSL=false";
 		String id = "root";
 		String pw = "password";
 

@@ -11,7 +11,7 @@
   </welcome-file-list>
 
 
-<servlet>
+  <servlet>
   	<servlet-name>itemList</servlet-name>
   	<servlet-class>web.ItemListServlet</servlet-class>
   </servlet>
@@ -31,6 +31,17 @@
 	<servlet-mapping>
 		<servlet-name>SignIn</servlet-name>
 		<url-pattern>/SignIn</url-pattern>
+	</servlet-mapping>
+
+
+	 <servlet>
+		<servlet-name>Create</servlet-name>
+		<servlet-class>web.CreateAccountServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Create</servlet-name>
+		<url-pattern>/Create</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
