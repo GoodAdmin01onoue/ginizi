@@ -26,7 +26,7 @@ if(bean!=null){%>
 
 		<%--カテゴリーの選択 --%>
 			カテゴリ
-		<select name= "cut" >
+		<select name= "cat" >
 			<option value= "1" >食べ物</option>
 			<option value= "2">飲み物</option>
 		</select>
@@ -52,8 +52,8 @@ if(bean!=null){%>
 			<%--ここに次のサーブレットのURL --%>
 			<form action="/Det" method="get">
 
-			<%--選択した商品のボタンによって、次のサーブレットにproCdを渡す --%>
-			<button name="product" value="<%=item.getProCd()%>">詳細</button>
+				<%--選択した商品のボタンによって、次のサーブレットにproCdを渡す --%>
+				<button name="product" value="<%=item.getProCd()%>">詳細</button>
 
 			</form>
 			</tr>
