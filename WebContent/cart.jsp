@@ -92,8 +92,9 @@
 %>
 
         </table></center>
-        <center><input type="submit" value = "買い物を続ける" name = "continue"><input type="submit" value = "購入" name = "buy"></center>
-
+        <form action = "Cart" method = "POST">
+        <center><input type="submit" value = "買い物を続ける" name = "cont"><input type="submit" value = "購入" name = "buy"></center>
+        </form>
 
 </body>
 </html>

@@ -45,6 +45,7 @@ public class ProDetServlet extends HttpServlet {
 			Class.forName("com.mysql.jdbc.Driver");
 			//データベースとの接続を確立
 			cnct = DriverManager.getConnection(url,idd,pw);
+
 			//cart押された場合
 			if(cart != null) {
 			//Mysqlの

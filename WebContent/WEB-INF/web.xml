@@ -52,6 +52,16 @@
 		<servlet-name>Det</servlet-name>
 		<url-pattern>/Det</url-pattern>
 	</servlet-mapping>
+
+		<servlet>
+		<servlet-name>Cart</servlet-name>
+		<servlet-class>web.CartServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Cart</servlet-name>
+		<url-pattern>/Cart</url-pattern>
+	</servlet-mapping>
 </web-app>
 
 
