@@ -28,10 +28,10 @@ public class CheckPurchase extends HttpServlet {
 //		HttpSession session = request.getSession(false);
 
 		//パラメータの取得
-		String yes=	request.getParameter("yes");
-		String no = request.getParameter("no");
-
-
+		String yes=	null;
+		String no = null;
+		yes=request.getParameter("yes");
+		no=request.getParameter("no");
 
 		String url = "jdbc:mysql://localhost/ginizishop";
 		String id = "root";
@@ -49,7 +49,7 @@ public class CheckPurchase extends HttpServlet {
 
 
 		//もしYesボタンを押されたら次の画面に繋がる
-		if(yes!=null) {
+		if(no==null) {
 
 			try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -59,13 +59,13 @@ public class CheckPurchase extends HttpServlet {
 			//各購入商品の在庫を購入分減らしている
 			String query ="update product set stock_no=stock_no-? where pro_cd=?;";
 
-			for(int i=0;i<proCd.size();i++) {
-			ps=cnct.prepareStatement(query);
-			ps.setInt(1, num.get(i));
-			ps.setInt(2, proCd.get(i));
-			ps.executeUpdate();
-			}
-
+//			for(int i=0;i<proCd.size();i++) {
+//			ps=cnct.prepareStatement(query);
+//			ps.setInt(1, num.get(i));
+//			ps.setInt(2, proCd.get(i));
+//			ps.executeUpdate();
+//			}
+			System.out.println(2);
 			RequestDispatcher rd = request.getRequestDispatcher("./Result");
 			rd.forward(request, response);
 
