@@ -82,7 +82,6 @@
     <url-pattern>/Result</url-pattern>
   </servlet-mapping>
 
-
   <servlet>
     <servlet-name>LogoutServlet</servlet-name>
     <servlet-class>web.LogoutServlet</servlet-class>
