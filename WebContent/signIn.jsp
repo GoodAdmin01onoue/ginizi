@@ -9,7 +9,6 @@
 </head>
 <body>
 
-
 	<center><img src="C:\Users\education\Desktop\写真\giniziShop.png">
 
 	<br><br>

@@ -37,7 +37,6 @@ public class ItemListServlet extends HttpServlet {
 
 	}
 
-
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
@@ -47,6 +46,7 @@ public class ItemListServlet extends HttpServlet {
 
 		word = req.getParameter("word");
 		cat = req.getParameter("cat");
+
 
 		List<ItemBean> rs = getItemListDAO(word, cat);
 		req.setAttribute("rs", rs);

@@ -28,7 +28,6 @@
         int total=0;
         int tax =0;
 
-
 		String url = "jdbc:mysql://localhost/giniziShop?autoReconnect=true&useSSL=false";
 		String idd = "root";
 		String pw = "password";
