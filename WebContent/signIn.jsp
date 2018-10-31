@@ -9,11 +9,11 @@
 </head>
 <body>
 
-
 	<center><img src="C:\Users\education\Desktop\写真\giniziShop.png">
 
 	<br><br>
 	<h1>ログイン</h1>
+
 
 	<span class="label label-danger"><font color = "red">${message}</font></span>
 

@@ -47,8 +47,8 @@ public class CheckPurchase extends HttpServlet {
 		String id = "root";
 		String pw = "password";
 
-		List<Integer> proCd = new ArrayList<Integer>();
-	    List<Integer> num = new ArrayList<Integer>();
+		  List<Integer> proCd = new ArrayList<Integer>();
+	        List<Integer> num = new ArrayList<Integer>();
 
 		Connection cnct = null;
 		PreparedStatement ps = null;
@@ -85,7 +85,7 @@ public class CheckPurchase extends HttpServlet {
 			ps.setInt(2, proCd.get(i));
 			ps.executeUpdate();
 			}
-			System.out.println(2);
+
 			RequestDispatcher rd = request.getRequestDispatcher("./Result");
 			rd.forward(request, response);
 

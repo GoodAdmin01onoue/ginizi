@@ -18,8 +18,7 @@
 <title>商品紹介</title>
 </head>
 <body>
-	<h1>商品紹介</h1>
-
+	<center><h1>商品紹介</h1>
 
 	<form action = "ProDet" method = "POST">
 	<img src="C:\Users\education\Desktop\写真\<%= proImg%>" align="left">
@@ -41,6 +40,7 @@
 	<input type="hidden" name="proPrice" value=<%= proPrice %>>
 	<input type="hidden" name="proCd" value=<%= proCd %>>
 	</form>
+	</center>
 
 </body>
 </html>
