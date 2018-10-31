@@ -10,14 +10,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>商品一覧</title>
 </head>
 <body>
 
 <%if(bean!=null){%>
 	<%--送信先のサーブレットを指定。doGetメソッドで --%>
 	<form action="./itemList" method="get">
-		<h3>検索</h3>
+		<center><h3>検索</h3>
 		<%--検索ワードの入力 --%>
 			<input type="text" name="word">
 		<br>
@@ -31,10 +31,11 @@
 			<option value= "2">飲み物</option>
 		</select>
 		<br>
-		<input type="submit" value="検索">
 		<br>
+		<input type="submit" value="検索">
+		<br><br>
 
-		<table>
+		<table border ="1" cellspacing="0">
 			<tr>
 			<th>商品名</th>
 			<th>価格</th>
@@ -72,7 +73,7 @@
 			</table>
 
 
-
+</center>
 </form>
 	<br>
 

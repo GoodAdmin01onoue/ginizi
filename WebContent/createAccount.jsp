@@ -7,7 +7,7 @@
 <title>ログイン画面</title>
 </head>
 <body>
-	<h1>登録</h1>
+	<center><h1>登録</h1>
 
 	<span class="label label-danger"><font color = "red">${message}</font></span>
 
@@ -21,7 +21,11 @@
 	</form>
 
 	<br>
-	<a href = "./signIn.jsp">ログイン⇒</a>
+
+
+	<input type="button" onclick="location.href='signIn.jsp'"value="ログイン">
+	</center>
+
 
 </body>
 </html>

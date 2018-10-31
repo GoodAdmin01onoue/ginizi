@@ -11,14 +11,14 @@
 
 <center>
 
-<form action="./ItemListServlet" method="post">
+<form action="./itemList" method="post">
 <input class="common_button" type="submit" name = "a" value="買い物を続ける">
-<%  String msg = (String)session.getAttribute("a");%>
+<%  %>
 </form>
 
-<form action="./SignInServlet" method="post">
-<input class="common_button" type="submit" name = "b" value="ログアウト">
-<% String msg1 = (String)session.getAttribute("b"); %>
+<form action="./Logout" method="post">
+<input class="common_button" type="submit" name = "logout" value="ログアウト">
+<%  %>
 </form>
 
 </center>
