@@ -19,6 +19,9 @@
 	<input type="submit" value = "LOGIN">
 	</form>
 
+	<br>
+	<a href = "./createAccount.jsp">アカウント作成⇒</a>
+
 
 </body>
 </html>

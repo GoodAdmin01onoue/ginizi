@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class CreateAccountServlet extends HttpServlet {
 
@@ -20,6 +21,11 @@ public class CreateAccountServlet extends HttpServlet {
 
 //		resp.setContentType("text/html;charset=UTF-8");
 //		req.setCharacterEncoding("UTF-8");
+
+		resp.setContentType("text/html;charset=UTF-8");
+		req.setCharacterEncoding("UTF-8");
+		HttpSession session = req.getSession(false);
+		session.invalidate();
 
 		String NAME=null;
 

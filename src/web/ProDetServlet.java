@@ -19,69 +19,77 @@ public class ProDetServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+		resp.setContentType("text/html;charset=UTF-8");
 		req.setCharacterEncoding("UTF-8");
-		int num = Integer.parseInt(req.getParameter("num"));
-		String proName = req.getParameter("proName");
-		String proPrice = req.getParameter("proPrice");
-		int proCd = Integer.parseInt(req.getParameter("proCd"));
 
-		String cart = req.getParameter("cart");
-		String back = req.getParameter("back");
+		HttpSession session = req.getSession(false);
 
-		//DBMSへの接続
-		String url = "jdbc:mysql://localhost/giniziShop?autoReconnect=true&useSSL=false";
-		String idd = "root";
-		String pw = "password";
+		if(session.getAttribute("NAME") == null) {
+			resp.sendRedirect("./signIn.jsp");
+		} else {
+			req.setCharacterEncoding("UTF-8");
+			int num = Integer.parseInt(req.getParameter("num"));
+			String proName = req.getParameter("proName");
+			String proPrice = req.getParameter("proPrice");
+			int proCd = Integer.parseInt(req.getParameter("proCd"));
 
-		//定義
-		Connection cnct = null;
-		PreparedStatement st = null;
-		Statement stmt = null;
-		ResultSet rs = null;
+			String cart = req.getParameter("cart");
+			String back = req.getParameter("back");
 
+			//DBMSへの接続
+			String url = "jdbc:mysql://localhost/giniziShop?autoReconnect=true&useSSL=false";
+			String idd = "root";
+			String pw = "password";
 
-		try {
-			//ドライバのロードとインスタンス化
-			Class.forName("com.mysql.jdbc.Driver");
-			//データベースとの接続を確立
-			cnct = DriverManager.getConnection(url,idd,pw);
-			//cart押された場合
-			if(cart != null) {
-			//Mysqlの
-			String query = "insert into purchase (pro_cd,order_no) values(?,?)";
-			st = cnct.prepareStatement(query);
-
-			st.setInt(1,proCd);
-			st.setInt(2,num);
-			st.executeUpdate();
+			//定義
+			Connection cnct = null;
+			PreparedStatement st = null;
+			Statement stmt = null;
+			ResultSet rs = null;
 
 
-				HttpSession session =req.getSession(true);
-				session.setAttribute("proNameCart", proName);
-				session.setAttribute("proPriceCart", proPrice);
-				session.setAttribute("proNumCart", num);
-
-				req.getRequestDispatcher("cart.jsp").forward(req, resp);
-
-			//back押された場合
-			}else if(back != null) {
-				resp.sendRedirect("./itemList");
-			}
-
-		//ClassNotFoundExceptionが起きた時実行
-		}catch(ClassNotFoundException ex) {
-			ex.printStackTrace();
-		//SQLExceptionが起きた時実行
-		}catch(SQLException ex) {
-			ex.printStackTrace();
-		//最後
-		}finally {
 			try {
-				if(st != null) st.close();
-				if(cnct != null) cnct.close();
-			} catch(Exception ex) { }
-		}
+				//ドライバのロードとインスタンス化
+				Class.forName("com.mysql.jdbc.Driver");
+				//データベースとの接続を確立
+				cnct = DriverManager.getConnection(url,idd,pw);
+				//cart押された場合
+				if(cart != null) {
+				//Mysqlの
+				String query = "insert into purchase (pro_cd,order_no) values(?,?)";
+				st = cnct.prepareStatement(query);
 
+				st.setInt(1,proCd);
+				st.setInt(2,num);
+				st.executeUpdate();
+
+
+					HttpSession sessionSet =req.getSession(true);
+					sessionSet.setAttribute("proNameCart", proName);
+					sessionSet.setAttribute("proPriceCart", proPrice);
+					sessionSet.setAttribute("proNumCart", num);
+
+					req.getRequestDispatcher("cart.jsp").forward(req, resp);
+
+				//back押された場合
+				}else if(back != null) {
+					resp.sendRedirect("./itemList");
+				}
+
+			//ClassNotFoundExceptionが起きた時実行
+			}catch(ClassNotFoundException ex) {
+				ex.printStackTrace();
+			//SQLExceptionが起きた時実行
+			}catch(SQLException ex) {
+				ex.printStackTrace();
+			//最後
+			}finally {
+				try {
+					if(st != null) st.close();
+					if(cnct != null) cnct.close();
+				} catch(Exception ex) { }
+			}
+		}
 
 	}
 

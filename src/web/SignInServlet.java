@@ -24,7 +24,7 @@ public class SignInServlet extends HttpServlet {
 		String pass = req.getParameter("pass");
 
 		//DBMSへの接続
-		String url = "jdbc:mysql://localhost/giniziShop?autoReconnect=true&useSSL=false";
+		String url = "jdbc:mysql://localhost/giniziShop";
 		String idd = "root";
 		String pw = "password";
 

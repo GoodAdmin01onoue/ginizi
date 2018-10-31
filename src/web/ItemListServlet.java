@@ -17,7 +17,6 @@ import javax.servlet.http.HttpServletResponse;
 
 public class ItemListServlet extends HttpServlet {
 
-
 	String word = null;
 	String cat = null;
 
@@ -38,8 +37,10 @@ public class ItemListServlet extends HttpServlet {
 
 	}
 
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+
 
 		res.setContentType("text/html;charset=UTF-8");
 		req.setCharacterEncoding("UTF-8");
