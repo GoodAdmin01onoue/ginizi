@@ -24,7 +24,7 @@ public class ProDetServlet extends HttpServlet {
 
 		HttpSession session = req.getSession(false);
 
-		if(session.getAttribute("NAME") == null) {
+		if(session.getAttribute("loginName") == null) {
 			resp.sendRedirect("./signIn.jsp");
 		} else {
 			req.setCharacterEncoding("UTF-8");

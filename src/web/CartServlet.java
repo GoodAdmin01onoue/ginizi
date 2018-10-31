@@ -19,7 +19,7 @@ public class CartServlet extends HttpServlet {
 
 		HttpSession session = req.getSession();
 
-		if(session.getAttribute("NAME") == null) {
+		if(session.getAttribute("loginName") == null) {
 			resp.sendRedirect("./signIn.jsp");
 		} else {
 			req.setCharacterEncoding("UTF-8");

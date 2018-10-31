@@ -33,7 +33,7 @@ public class CheckPurchase extends HttpServlet {
 
 		HttpSession session = request.getSession(false);
 
-		if(session.getAttribute("NAME") == null) {
+		if(session.getAttribute("loginName") == null) {
 			response.sendRedirect("./signIn.jsp");
 		} else {
 
@@ -47,8 +47,8 @@ public class CheckPurchase extends HttpServlet {
 		String id = "root";
 		String pw = "password";
 
-		  List<Integer> proCd = new ArrayList<Integer>();
-	        List<Integer> num = new ArrayList<Integer>();
+		List<Integer> proCd = new ArrayList<Integer>();
+	    List<Integer> num = new ArrayList<Integer>();
 
 		Connection cnct = null;
 		PreparedStatement ps = null;
