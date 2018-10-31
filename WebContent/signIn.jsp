@@ -5,9 +5,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ログイン画面</title>
+
 </head>
 <body>
-	<center><h1>ログイン</h1>
+
+
+	<center><img src="C:\Users\education\Desktop\写真\giniziShop.png">
+
+	<br><br>
+	<h1>ログイン</h1>
 
 	<span class="label label-danger"><font color = "red">${message}</font></span>
 
