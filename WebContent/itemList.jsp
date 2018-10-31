@@ -13,8 +13,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-if(bean!=null){%>
+
+<%if(bean!=null){%>
 	<%--送信先のサーブレットを指定。doGetメソッドで --%>
 	<form action="./itemList" method="get">
 		<h3>検索</h3>
@@ -48,7 +48,7 @@ if(bean!=null){%>
 			<td><%=item.getProName() %></td>
 			<td><%=item.getProPrice() %></td>
 			<td>
-			</form>
+
 
 			<%--ここに次のサーブレットのURL --%>
 
@@ -63,12 +63,17 @@ if(bean!=null){%>
 
 
 			<%}%>
+
 			<% }else{ %>
 			<h2>検索できません</h2>
 			<%}%>
+
 			</tr>
 			</table>
 
+
+
+</form>
 	<br>
 
 </body>

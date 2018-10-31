@@ -10,17 +10,14 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
 
-
   <servlet>
   	<servlet-name>itemList</servlet-name>
   	<servlet-class>web.ItemListServlet</servlet-class>
   </servlet>
-
   <servlet-mapping>
-  	<servlet-name>itemList</servlet-name>
-  	<url-pattern>/itemList</url-pattern>
+    <servlet-name>itemList</servlet-name>
+    <url-pattern>/itemList</url-pattern>
   </servlet-mapping>
-
 
 
   	<servlet>
@@ -84,7 +81,26 @@
 		<servlet-name>Check</servlet-name>
 		<url-pattern>/Check</url-pattern>
 	</servlet-mapping>
+
+
+	<servlet>
+   <servlet-name>CheckPurchase</servlet-name>
+    <servlet-class>web.CheckPurchase</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>CheckPurchase</servlet-name>
+    <url-pattern>/CheckPurchase</url-pattern>
+  </servlet-mapping>
+
+
+ <servlet>
+   <servlet-name>Result</servlet-name>
+    <servlet-class>web.ResultServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Result</servlet-name>
+    <url-pattern>/Result</url-pattern>
+  </servlet-mapping>
+
 </web-app>
-
-
-
