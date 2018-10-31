@@ -22,11 +22,17 @@ public class CheckPurchase extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		response.setContentType("text/html;charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
+
 //		HttpSession session = request.getSession(false);
 
 		//パラメータの取得
-		String yes=	request.getParameter("Yes");
-		String no = request.getParameter("No");
+		String yes=	request.getParameter("yes");
+		String no = request.getParameter("no");
+
+
+
 		String url = "jdbc:mysql://localhost/ginizishop";
 		String id = "root";
 		String pw = "password";
@@ -59,6 +65,10 @@ public class CheckPurchase extends HttpServlet {
 			ps.setInt(2, proCd.get(i));
 			ps.executeUpdate();
 			}
+
+			RequestDispatcher rd = request.getRequestDispatcher("./Result");
+			rd.forward(request, response);
+
 			}catch(ClassNotFoundException ex) {
 				ex.printStackTrace();
 			}catch(SQLException ex) {
@@ -68,20 +78,13 @@ public class CheckPurchase extends HttpServlet {
 					if(cnct!=null) cnct.close();
 					if(rs!=null) rs.close();
 					if(ps!=null) ps.close();
-				}catch(Exception ex) {
-				}
+				}catch(Exception ex) {}
 			}
 
-
-			RequestDispatcher rd = request.getRequestDispatcher("Result.jsp");
-			 rd.forward(request, response);
-
+			} else {
+				response.sendRedirect("./itemList");
 			}
 			//もしNoボタンが押されたらログイン画面に繋がる
-			if(no!=null) {
-				RequestDispatcher rd = request.getRequestDispatcher("signIn.jsp");
-				 rd.forward(request, response);
-			}
 		}
 
 

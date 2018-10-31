@@ -92,8 +92,11 @@
 %>
 
         </table></center>
-        <form action = "Check" method = "POST">
-        <center><input type="submit" value = "いいえ" name = "no"><input type="submit" value = "はい" name = "yes"></center>
+        <form action = "CheckPurchase" method = "POST">
+        <center>
+	        <input type="submit" value = "いいえ" name = "no">
+	        <input type="submit" value = "はい" name = "yes">
+        </center>
         </form>
 
 </body>

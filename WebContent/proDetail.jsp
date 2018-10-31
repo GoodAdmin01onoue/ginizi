@@ -19,27 +19,7 @@
 </head>
 <body>
 	<h1>商品紹介</h1>
-<<<<<<< HEAD
-	<% int stock = (Integer)request.getAttribute("stockNo");%>
-=======
-	<% String proName = request.getParameter("proName");%>
-	<% String catName = request.getParameter("catName");%>
-	<% String proPrice1 =request.getParameter("proPrice");%>
-	<% String stockNo1 = request.getParameter("stockNo");%>
-	<% String proMsg = request.getParameter("proMsg");%>
-	<% String proImg = request.getParameter("proImg");%>
-	<% String proCd1 = request.getParameter("proCd");%>
 
-	<% proPrice1 = proPrice1.trim();
-		stockNo1 = stockNo1.trim();
-		proCd1 = proCd1.trim();
-
-		int proPrice = Integer.parseInt(proPrice1);
-		int stockNo = Integer.parseInt(stockNo1);
-		int proCd = Integer.parseInt(proCd1);
-	%>
-
->>>>>>> 12_1
 
 	<form action = "ProDet" method = "POST">
 	<img src="<%= proImg%>" align="left">

@@ -93,7 +93,14 @@
     <url-pattern>/CheckPurchase</url-pattern>
   </servlet-mapping>
 
+
+ <servlet>
+   <servlet-name>Result</servlet-name>
+    <servlet-class>web.ResultServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Result</servlet-name>
+    <url-pattern>/Result</url-pattern>
+  </servlet-mapping>
+
 </web-app>
-
-
-
