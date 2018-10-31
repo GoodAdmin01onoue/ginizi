@@ -9,93 +9,72 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-
   <servlet>
-  	<servlet-name>itemList</servlet-name>
-  	<servlet-class>web.ItemListServlet</servlet-class>
+    <servlet-name>itemList</servlet-name>
+    <servlet-class>web.ItemListServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>itemList</servlet-name>
     <url-pattern>/itemList</url-pattern>
   </servlet-mapping>
-
-
-  	<servlet>
-		<servlet-name>SignIn</servlet-name>
-		<servlet-class>web.SignInServlet</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>SignIn</servlet-name>
-		<url-pattern>/SignIn</url-pattern>
-	</servlet-mapping>
-
-
-	 <servlet>
-		<servlet-name>Create</servlet-name>
-		<servlet-class>web.CreateAccountServlet</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>Create</servlet-name>
-		<url-pattern>/Create</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>ProDet</servlet-name>
-		<servlet-class>web.ProDetServlet</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>ProDet</servlet-name>
-		<url-pattern>/ProDet</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>Det</servlet-name>
-		<servlet-class>web.DetServlet</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>Det</servlet-name>
-		<url-pattern>/Det</url-pattern>
-	</servlet-mapping>
-
-		<servlet>
-		<servlet-name>cart</servlet-name>
-		<servlet-class>web.CartServlet</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>cart</servlet-name>
-		<url-pattern>/cart</url-pattern>
-	</servlet-mapping>
-
-
-	<servlet>
-		<servlet-name>Check</servlet-name>
-		<servlet-class>web.CheckServlet</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>Check</servlet-name>
-		<url-pattern>/Check</url-pattern>
-	</servlet-mapping>
-
-
-	<servlet>
-   <servlet-name>CheckPurchase</servlet-name>
+  <servlet>
+    <servlet-name>SignIn</servlet-name>
+    <servlet-class>web.SignInServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SignIn</servlet-name>
+    <url-pattern>/SignIn</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Create</servlet-name>
+    <servlet-class>web.CreateAccountServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Create</servlet-name>
+    <url-pattern>/Create</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ProDet</servlet-name>
+    <servlet-class>web.ProDetServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProDet</servlet-name>
+    <url-pattern>/ProDet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Det</servlet-name>
+    <servlet-class>web.DetServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Det</servlet-name>
+    <url-pattern>/Det</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>cart</servlet-name>
+    <servlet-class>web.CartServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>cart</servlet-name>
+    <url-pattern>/cart</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Check</servlet-name>
+    <servlet-class>web.CheckServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Check</servlet-name>
+    <url-pattern>/Check</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>CheckPurchase</servlet-name>
     <servlet-class>web.CheckPurchase</servlet-class>
   </servlet>
-
   <servlet-mapping>
     <servlet-name>CheckPurchase</servlet-name>
     <url-pattern>/CheckPurchase</url-pattern>
   </servlet-mapping>
-
-
- <servlet>
-   <servlet-name>Result</servlet-name>
+  <servlet>
+    <servlet-name>Result</servlet-name>
     <servlet-class>web.ResultServlet</servlet-class>
   </servlet>
   <servlet-mapping>
@@ -103,4 +82,13 @@
     <url-pattern>/Result</url-pattern>
   </servlet-mapping>
 
+
+  <servlet>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>web.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/Logout</url-pattern>
+  </servlet-mapping>
 </web-app>
