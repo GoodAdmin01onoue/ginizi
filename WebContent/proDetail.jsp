@@ -18,7 +18,7 @@
 <title>商品紹介</title>
 </head>
 <body>
-	<h1>商品紹介</h1>
+	<center><h1>商品紹介</h1>
 
 
 	<form action = "ProDet" method = "POST">
@@ -41,6 +41,7 @@
 	<input type="hidden" name="proPrice" value=<%= proPrice %>>
 	<input type="hidden" name="proCd" value=<%= proCd %>>
 	</form>
+	</center>
 
 </body>
 </html>
