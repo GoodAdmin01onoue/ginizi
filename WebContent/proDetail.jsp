@@ -22,7 +22,6 @@
 <center><h1>商品紹介</h1></center>
 
 
-
 	<form action = "ProDet" method = "POST">
 	<img src="C:\Users\education\Desktop\写真\<%= proImg%>" align="left">
 
