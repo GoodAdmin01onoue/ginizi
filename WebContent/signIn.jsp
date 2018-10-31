@@ -15,6 +15,7 @@
 	<br><br>
 	<h1>ログイン</h1>
 
+
 	<span class="label label-danger"><font color = "red">${message}</font></span>
 
 	<form action = "SignIn" method = "POST">
