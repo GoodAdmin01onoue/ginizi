@@ -33,7 +33,7 @@ public class CheckPurchase extends HttpServlet {
 
 		HttpSession session = request.getSession(false);
 
-		if(session.getAttribute("NAME") == null) {
+		if(session.getAttribute("loginName") == null) {
 			response.sendRedirect("./signIn.jsp");
 		} else {
 
