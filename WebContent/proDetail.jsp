@@ -22,14 +22,14 @@
 
 
 	<form action = "ProDet" method = "POST">
-	<img src="<%= proImg%>" align="left">
+	<img src="C:\Users\education\Desktop\写真\<%= proImg%>" align="left">
 
-	<table border = "1">
+	<table border = "1" cellspacing="0">
 	<tr><td>商品名</td><td><%= proName%></td></tr>
 	<tr><td>カテゴリ</td><td><%= catName%></td></tr>
 	<tr><td>価格</td><td><%= proPrice%></td></tr>
 	<tr><td>在庫</td><td><%= stockNo%></td></tr>
-	<tr><td>商品紹介</td><td><%= proImg%></td></tr>
+	<tr><td>商品紹介</td><td><%= proMsg%></td></tr>
 	</table>
 
 	個数<select name = "num">

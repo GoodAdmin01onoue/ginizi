@@ -13,7 +13,7 @@
 </head>
 <body>
 	<center><h1>カート</h1></center>
-	<center><table border='1' width="500"><tr><th>商品名</th><th>単価</th><th>数量</th></tr>
+	<center><table border='1' width="300" cellspacing="0"><tr><th>商品名</th><th>単価</th><th>数量</th></tr>
 
 <%
         // データベースへのアクセス開始
@@ -26,7 +26,7 @@
         List<Integer> plist = new ArrayList<Integer>();
         List<Integer> nlist = new ArrayList<Integer>();
         int total=0;
-        double tax =0;
+        int tax =0;
 
 
 		String url = "jdbc:mysql://localhost/giniziShop?autoReconnect=true&useSSL=false";
@@ -58,10 +58,10 @@
 
                 <td><%= rs.getString("pro_name")%></td>
 
-                <td>¥<%= rs.getInt("pro_price")%></td>
+                <td align="right">¥<%= rs.getInt("pro_price")%></td>
                 <% plist.add(rs.getInt("pro_price")); %>
 
-                <td><%= rs.getInt("order_no") %>個</td>
+                <td align="right"><%= rs.getInt("order_no") %>個</td>
                 <% nlist.add(rs.getInt("order_no")); %>
                 </tr>
 
@@ -71,13 +71,13 @@
 			for(int i = 0;i < plist.size(); i++){
 				total += plist.get(i) * nlist.get(i);
 			}
-			tax = total * 0.08;
+			tax = (int)(total * 0.08);
 
 			%>
 			<tr>
-			<td colspan="2" align="center">消費税</td><td>¥<%=tax %></td></tr>
+			<td colspan="2" align="center">消費税</td><td align="right">¥<%=tax %></td></tr>
 			<tr>
-			<td colspan="2" align="center">合計金額</td><td>¥<%= total %></td></tr>
+			<td colspan="2" align="center">合計金額</td><td align="right">¥<%= total %></td></tr>
 
 
 <%

@@ -7,7 +7,7 @@
 <title>ログイン画面</title>
 </head>
 <body>
-	<h1>ログイン</h1>
+	<center><h1>ログイン</h1>
 
 	<span class="label label-danger"><font color = "red">${message}</font></span>
 
@@ -16,8 +16,13 @@
 		<tr><td>名前:</td><td><input type="text" name = "name"></td></tr>
 		<tr><td>パスワード:</td><td><input type="password" name = "pass"></td></tr>
 	</table>
+	<br>
 	<input type="submit" value = "LOGIN">
 	</form>
+
+	<br>
+	<input type="button" onclick="location.href='createAccount.jsp'"value="新規登録">
+	</center>
 
 
 </body>

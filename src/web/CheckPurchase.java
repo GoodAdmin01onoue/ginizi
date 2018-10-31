@@ -6,7 +6,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -37,14 +39,12 @@ public class CheckPurchase extends HttpServlet {
 		String id = "root";
 		String pw = "password";
 
-		//リストをリクエストオブジェクトから引き出している
-		ArrayList<Integer> proCd=(ArrayList<Integer>)request.getAttribute("cdlist");
-		ArrayList<Integer> num=(ArrayList<Integer>)request.getAttribute("numlist");
-
-
+		  List<Integer> proCd = new ArrayList<Integer>();
+	        List<Integer> num = new ArrayList<Integer>();
 
 		Connection cnct = null;
 		PreparedStatement ps = null;
+		Statement st =null;
 		ResultSet rs = null;
 
 
@@ -55,16 +55,28 @@ public class CheckPurchase extends HttpServlet {
 			Class.forName("com.mysql.jdbc.Driver");
 			cnct = DriverManager.getConnection(url,id,pw);
 
+			st = cnct.createStatement();
+
+			rs = st.executeQuery("select * from purchase");
+			while(rs.next()) {
+				proCd.add(rs.getInt("pro_cd"));
+				num.add(rs.getInt("order_no"));
+			}
+
+
+			st.executeUpdate("delete from purchase");
+
+
 
 			//各購入商品の在庫を購入分減らしている
 			String query ="update product set stock_no=stock_no-? where pro_cd=?;";
 
-//			for(int i=0;i<proCd.size();i++) {
-//			ps=cnct.prepareStatement(query);
-//			ps.setInt(1, num.get(i));
-//			ps.setInt(2, proCd.get(i));
-//			ps.executeUpdate();
-//			}
+			for(int i=0;i<proCd.size();i++) {
+			ps=cnct.prepareStatement(query);
+			ps.setInt(1, num.get(i));
+			ps.setInt(2, proCd.get(i));
+			ps.executeUpdate();
+			}
 			System.out.println(2);
 			RequestDispatcher rd = request.getRequestDispatcher("./Result");
 			rd.forward(request, response);

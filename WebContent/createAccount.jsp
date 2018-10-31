@@ -7,7 +7,7 @@
 <title>ログイン画面</title>
 </head>
 <body>
-	<h1>登録</h1>
+	<center><h1>登録</h1>
 
 	<span class="label label-danger"><font color = "red">${message}</font></span>
 
@@ -19,6 +19,7 @@
 	</table>
 	<input type="submit" value = "CREATE ACCOUNT">
 	</form>
+	</center>
 
 
 </body>
