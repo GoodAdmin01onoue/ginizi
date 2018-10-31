@@ -10,14 +10,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>商品一覧</title>
+<title>Insert title here</title>
 </head>
 <body>
 
 <%if(bean!=null){%>
 	<%--送信先のサーブレットを指定。doGetメソッドで --%>
 	<form action="./itemList" method="get">
-		<center><h3>検索</h3>
+		<h3>検索</h3>
 		<%--検索ワードの入力 --%>
 			<input type="text" name="word">
 		<br>
@@ -31,11 +31,10 @@
 			<option value= "2">飲み物</option>
 		</select>
 		<br>
-		<br>
 		<input type="submit" value="検索">
-		<br><br>
+		<br>
 
-		<table border ="1" cellspacing="0">
+		<table>
 			<tr>
 			<th>商品名</th>
 			<th>価格</th>
@@ -53,13 +52,13 @@
 
 			<%--ここに次のサーブレットのURL --%>
 
-			<form action="Det" method="get">
+
 
 
 			<%--選択した商品のボタンによって、次のサーブレットにproCdを渡す --%>
 			<a href="./Det?product=<%=item.getProCd()%>">詳細</a>
 
-			</form>
+
 
 
 
@@ -73,7 +72,7 @@
 			</table>
 
 
-</center>
+
 </form>
 	<br>
 
